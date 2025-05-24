@@ -12,10 +12,7 @@ class Cell:
         self._y2 = y1 + height
         self._win = win
         self.visited = False
-        if seed:
-            self._seed = seed
-        else:
-            self._seed = random.seed(seed)
+
         self._center = Point((self._x1 + self._x2) / 2, (self._y1 + self._y2) / 2)
         
     def draw(self,fill_color="black"):
@@ -48,3 +45,4 @@ class Cell:
             
         if self._win:
             self._win.draw_line(Line(self._center, to_cell._center), fill_color=fill_color)
+            
